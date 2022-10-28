@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weatherapp.models.DayForecast
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
@@ -26,15 +27,16 @@ class ForecastAdapter(private val data : List<DayForecast>) : RecyclerView.Adapt
 
 class ForecastViewHolder(view : View) : RecyclerView.ViewHolder(view) {
     private val dayForecastDate: TextView
-    private val dayForecastCurrentTemp: TextView
+    //private val dayForecastCurrentTemp: TextView
     private val dayForecastHigh: TextView
     private val dayForecastLow: TextView
     private val dayForecastSunrise: TextView
     private val dayForecastSunset: TextView
+    private val resources = view.resources
 
     init{
         dayForecastDate = view.findViewById(R.id.forecast_date)
-        dayForecastCurrentTemp = view.findViewById(R.id.forecast_current_temp)
+        //dayForecastCurrentTemp = view.findViewById(R.id.forecast_current_temp)
         dayForecastHigh = view.findViewById(R.id.forecast_high)
         dayForecastLow = view.findViewById(R.id.forecast_low)
         dayForecastSunrise = view.findViewById(R.id.sunrise)
@@ -42,11 +44,12 @@ class ForecastViewHolder(view : View) : RecyclerView.ViewHolder(view) {
     }
 
     fun bind(data: DayForecast){
+        // date doesn't have a place in strings.xml, should it???
         dayForecastDate.text = dateFormatter(data.date)
-        dayForecastSunrise.text = timeFormatter(data.sunrise)
-        dayForecastSunset.text = timeFormatter(data.sunset)
-        dayForecastLow.text = data.temp.min.toString()
-        dayForecastHigh.text = data.temp.max.toString()
+        dayForecastSunrise.text = resources.getString(R.string.forecast_item_sunrise, timeFormatter(data.sunrise))
+        dayForecastSunset.text = resources.getString(R.string.forecast_item_sunset, timeFormatter(data.sunset))
+        dayForecastHigh.text = resources.getString(R.string.forecast_item_high, data.temp.max)
+        dayForecastLow.text = resources.getString(R.string.forecast_item_low, data.temp.min)
     }
 
     private fun dateFormatter(long: Long): String? {

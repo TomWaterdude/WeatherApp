@@ -2,19 +2,19 @@
     <!-- 1:48:30 - lecture 4 - Ben has much less code than me here, consider moving code -->
     <string name="app_name">Clever Weather</string>
     <string name="city_name">Bloomington, MN</string>
-    <string name="current_temp">72°</string>
-    <string name="feels_like">Feels like 69°</string>
-    <string name="low">Low 65°</string>
-    <string name="high">High 78°</string>
-    <string name="humidity">Humidity 58%</string>
-    <string name="pressure">Pressure 1050 hPa</string>
+    <string name="current_temp">%d°</string>
+    <string name="feels_like">Feels like: %d°</string>
+    <string name="low">Low: %d°</string>
+    <string name="high">High: %d°</string>
+    <string name="humidity">Humidity: %d</string>
+    <string name="pressure">Pressure: %dhPa</string>
     <string name="forecast">Forecast</string>
 
     <!-- externalizing the strings from the forecast items layout -->
 
     <string name="forecast_item_temp" >Temp: ?</string>
-    <string name="forecast_item_high" formatted="true">High: %d°</string>
-    <string name="forecast_item_low">Low: %d°</string>
-    <string name="forecast_item_sunrise">Sunrise: %d am</string>
-    <string name="forecast_item_sunset">Sunset: %d pm</string>
+    <string name="forecast_item_high" >High: %.0f°</string>
+    <string name="forecast_item_low">Low: %.0f°</string>
+    <string name="forecast_item_sunrise">Sunrise: %s am</string>
+    <string name="forecast_item_sunset">Sunset: %s pm</string>
 </resources>
