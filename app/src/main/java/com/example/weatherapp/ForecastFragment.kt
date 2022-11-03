@@ -1,14 +1,12 @@
 package com.example.weatherapp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.weatherapp.databinding.FragmentForecastBinding
-import java.time.LocalDateTime
-import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
+import com.example.weatherapp.models.DayForecast
+import com.example.weatherapp.models.ForecastTemp
 
 private val forecastData = listOf(
 
@@ -40,6 +38,7 @@ class ForecastFragment : Fragment(R.layout.fragment_forecast){
         binding = FragmentForecastBinding.bind(view)
         binding.forecastList.adapter = ForecastAdapter(forecastData)
         getActivity()?.setTitle("Forecast")
+        //requireActivity().title = "Forecast"
 
     }
 }
