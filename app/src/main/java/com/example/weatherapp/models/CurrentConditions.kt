@@ -3,10 +3,9 @@ package com.example.weatherapp.models
 import com.squareup.moshi.Json
 
 data class WeatherData(
-    @Json(name = "icon") val iconName:String
+    @Json(name = "icon") val iconName: String
 )
 
-// main data
 data class CurrentConditionsData(
     @Json(name = "temp") val temperature: Float,
     @Json(name = "feels_like") val feelsLike: Float,
@@ -17,6 +16,7 @@ data class CurrentConditionsData(
 )
 
 data class CurrentConditions(
+    @Json(name = "name") val cityName: String,
     @Json(name = "weather") val weatherData: List<WeatherData>,
     @Json(name = "main") val conditions: CurrentConditionsData,
 )

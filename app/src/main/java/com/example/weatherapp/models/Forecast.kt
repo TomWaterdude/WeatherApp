@@ -4,6 +4,7 @@ import com.squareup.moshi.Json
 
 data class ForecastWeatherData(
     @Json(name = "icon") val iconName: String,
+    @Json(name = "main") val main: String,
 )
 
 data class ForecastTempData(
