@@ -9,12 +9,11 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.weatherapp.databinding.ActivityMainBinding
 import com.example.weatherapp.ui.CurrentConditions
 import com.example.weatherapp.ui.ForecastScreen
-//import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     //private late init var viewModel: MainViewModel
@@ -35,15 +34,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        //setContentView(R.layout.activity_main)
-
-        //   viewBinding = ActivityMainBinding.inflate(layoutInflater)
-        //   val currentConditions = CurrentConditionsFragment(72f, "St.Paul, MN")
-        // viewModel = MainViewModel(currentConditions)
-
-        // viewModel.viewState.observe(this) { -> currentConditions
-
-        //  }
-
     }
 }
